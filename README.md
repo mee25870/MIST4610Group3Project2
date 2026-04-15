@@ -8,3 +8,7 @@ Sp26_61608_Group 3
 4. Trey Hill [@treyhill277](https://github.com/treyhill277)
 5. Ciara Trinh [@cmt37912](https://github.com/cmt37912)
 6. Joshua Welch [@jew22145](https://github.com/jew22145)
+## Data Set Explanation 
+## Questions
+## Snowsight Dashboard
+## Streamlit 
