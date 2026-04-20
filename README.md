@@ -81,6 +81,9 @@ Snowflake Public Data unified geographic entity index, joinable to all tables, p
 | `ISO_3166_2_CODE` | VARCHAR | Full ISO-3166 code. | `ISO 3166-2:BS` |
 
 ## Questions
+**Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
+
+**Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
 ## Snowsight Dashboard
 ## Streamlit 
 
