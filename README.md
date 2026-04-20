@@ -9,6 +9,63 @@ Sp26_61608_Group 3
 5. Ciara Trinh [@cmt37912](https://github.com/cmt37912)
 6. Joshua Welch [@jew22145](https://github.com/jew22145)
 ## Data Set Explanation 
+### `PUBLIC_DATA.FBI_CRIME_ATTRIBUTES`
+Estimated crime statistics for both state and national levels in the US from the FBI.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_aggravated_assault` |
+| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, aggravated assault` |
+| `OFFENSE_CATEGORY` | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | `Aggravated Assault` |
+| `MEASURE` | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | `Incidents` |
+| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
+| `FREQUENCY` | VARCHAR | Frequency of aggregations. | `Annual` |
+
+---
+
+### `PUBLIC_DATA.FBI_CRIME_ATTRIBUTES_PIT`
+Tracks history of the `fbi_crime_attributes` table with start and end timestamps to indicate row validity periods.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_aggravated_assault` |
+| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, aggravated assault` |
+| `OFFENSE_CATEGORY` | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | `Aggravated Assault` |
+| `MEASURE` | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | `Incidents` |
+| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
+| `FREQUENCY` | VARCHAR | Frequency of aggregations. | `Annual` |
+| `_EFFECTIVE_START_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | `2024-09-24 12:33:41.372000-04:00` |
+| `_EFFECTIVE_END_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | `N/A` |
+
+---
+
+### `PUBLIC_DATA.FBI_CRIME_TIMESERIES`
+Estimated crime statistics for both state and national levels in the US from the FBI.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `GEO_ID` | VARCHAR | A unique identifier for a place. Joinable to other geography tables including `GEOGRAPHY_INDEX`, `GEOGRAPHY_RELATIONSHIPS`, and `GEOGRAPHY_CHARACTERISTICS`. | `country/USA` |
+| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_violent_crime` |
+| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, violent crime` |
+| `DATE` | DATE | Date associated with the value. | `1979-12-31` |
+| `VALUE` | NUMBER | Value reported for the variable. | `1208030` |
+| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
+
+---
+
+### `PUBLIC_DATA.FBI_CRIME_TIMESERIES_PIT`
+Tracks history of the `fbi_crime_timeseries` table with start and end timestamps to indicate row validity periods.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `GEO_ID` | VARCHAR | A unique identifier for a place. Joinable to other geography tables including `GEOGRAPHY_INDEX`, `GEOGRAPHY_RELATIONSHIPS`, and `GEOGRAPHY_CHARACTERISTICS`. | `country/USA` |
+| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_violent_crime` |
+| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, violent crime` |
+| `DATE` | DATE | Date associated with the value. | `1979-12-31` |
+| `VALUE` | NUMBER | Value reported for the variable. | `1208030` |
+| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
+| `_EFFECTIVE_START_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | `2024-05-21 23:04:34.367000-04:00` |
+| `_EFFECTIVE_END_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | `2024-09-24 15:37:27.010000-04:00` |
 ## Questions
 ## Snowsight Dashboard
 ## Streamlit 
