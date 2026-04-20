@@ -14,14 +14,6 @@ Sp26_61608_Group 3
 ## Streamlit 
 
 # FBI US Crime Data Analytics Dashboard
-
-## 1. Team Name and Members
-**Team Name:** [Your Team Name as assigned on eLC]
-
-- [Member 1 Name](https://github.com/member1)
-- [Member 2 Name](https://github.com/member2)
-- [Member 3 Name](https://github.com/member3)
-
 ## 2. Dataset Description
 **Provider:** Snowflake Public Data (Cybersyn)  
 **Marketplace Listing:** Snowflake Public Data Free  
