@@ -66,6 +66,20 @@ Tracks history of the `fbi_crime_timeseries` table with start and end timestamps
 | `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
 | `_EFFECTIVE_START_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | `2024-05-21 23:04:34.367000-04:00` |
 | `_EFFECTIVE_END_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | `2024-09-24 15:37:27.010000-04:00` |
+### `PUBLIC_DATA.GEOGRAPHY_INDEX`
+Snowflake Public Data unified geographic entity index, joinable to all tables, providing unique geographic identifiers with associated names, levels, and ISO codes for various US geographies.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| `GEO_ID` | VARCHAR | A unique identifier for a place (a nation, state, zip-code, etc.) | `VIR/St.Croix` |
+| `GEO_NAME` | VARCHAR | Full name of the place. | `St.Croix` |
+| `LEVEL` | VARCHAR | Geographic level or hierarchy (e.g., Country, State, County, City, Continent, CountrySubRegion, etc.) | `County` |
+| `ISO_NAME` | VARCHAR | Country name from International Organization for Standardization. | `Aruba` |
+| `ISO_ALPHA2` | VARCHAR | 2 letter country code from International Organization for Standardization. | `QC` |
+| `ISO_ALPHA3` | VARCHAR | 3 letter country code from International Organization for Standardization. | `BHS` |
+| `ISO_NUMERIC_CODE` | VARCHAR | Numeric code from International Organization for Standardization. | `533` |
+| `ISO_3166_2_CODE` | VARCHAR | Full ISO-3166 code. | `ISO 3166-2:BS` |
+
 ## Questions
 ## Snowsight Dashboard
 ## Streamlit 
