@@ -73,7 +73,7 @@ Snowflake description: Tracks history of the fbi_crime_timeseries table with sta
 
 ### PUBLIC_DATA.GEOGRAPHY_INDEX
 Snowflake description: Snowflake Public Data unified geographic entity index, joinable to all tables, providing unique geographic identifiers with associated names, levels, and ISO codes for various US geographies.
-- This table from the Geography data set was added in order to connect Geo IDs with state names.
+- This table from the Geography dataset was added in order to connect GeoIDs with state names.
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
