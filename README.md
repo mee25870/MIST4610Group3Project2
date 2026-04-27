@@ -9,7 +9,7 @@ Sp26_61608_Group 3
 5. Ciara Trinh [@cmt37912](https://github.com/cmt37912)
 6. Joshua Welch [@jew22145](https://github.com/jew22145)
 ## FBI Data Source Rationale
-For our project, we selected the FBI Crime dataset from Snowflake's publicly available data. This dataset allows us to query data that would be easy to graphically represent and make visually insightful, given that it contains consistent yearly counts across multiple crime categories and geographic levels. The topic of FBI crime statistics sparked our interest as it is something we are exposed to in day-to-day life making it both relevant and engaging to explore.
+For our project, we selected the FBI Crime dataset from Snowflake's publicly available data. This dataset allows us to query data that is easy to represent graphically and gather visual insight from, given that it contains consistent features like yearly counts across multiple crime categories and geographic levels. The topic of FBI crime statistics sparked our interest as it is something we are exposed to in day-to-day life; crime is a real problem we face, and one that we can also collect lots of data on and use to answer deeper questions, making it both relevant and engaging to explore.
 ## FBI Dataset 
 ### PUBLIC_DATA.FBI_CRIME_ATTRIBUTES
 Snowflake description: Estimated crime statistics for both state and national levels in the US from the FBI. 
@@ -88,7 +88,7 @@ Snowflake description: Snowflake Public Data unified geographic entity index, jo
 
 ## Questions
 **Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
-- The goal of this question is to determine whether violent crime and property crime in the United States have been going up, going down, or staying the same over the years. It pulls data from two different tables, one containing the actual yearly crime counts and another containing location names, joining them together by a shared location code. The results are then filtered by national-level data and is limited to the two crime categories in question. Sorting by date ascending makes it easy to spot trends over time. This data is important to have as researchers may be interested in what caused a spike or drop in the different types of crimes. For example, major societal events like the COVID-19 pandemic could be potential factors worth investigating. 
+- The goal of this question is to determine whether the frequency of violent crime and property crime in the United States has trended upward, downward, or stayed the same over the years. It pulls data from two different tables: one containing the actual yearly crime counts and another containing location names, joining them together by a shared location code. The results are then filtered by national-level data and are limited to the two crime categories in question. Sorting by date ascending makes it easy to spot trends over time. Questions like these are important to ask as the data can show us significant patterns that researchers may be interested in investigating further, such as what caused a spike or drop in a specific type of crime. Something like a major societal event (like the COVID-19 pandemic, for example) could be a potential factor or reason for seeing significant changes in crime data, and that is why we must investigate. 
 ```sql
 SELECT t.DATE, t.VARIABLE_NAME, t.VALUE, g.GEO_NAME, g.LEVEL,
 FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
@@ -98,7 +98,7 @@ ORDER BY t.DATE ASC;
 ```
 
 **Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
-- This query identifies which states report the highest crime incidents for various crime types in a specific year. It pulls crime counts and location names from two joined tables and filters to state-level data by using the PUBLIC_DATA.GEOGRAPHY_INDEX to match state location codes to state names. The query is sorted in descending order so the highest reporting states are at the top. This data would be of interest to researchers as geographical regional differences may lead to increased crimes in some states as compared to others. Identifying these differences could help policymakers determine a better process to dealing with crimes in these regions.
+- This query identifies which states report the highest crime incidents for various crime types in a specific year. It pulls crime counts and location names from two joined tables and filters to state-level data (using the PUBLIC_DATA.GEOGRAPHY_INDEX) to match state location codes to state names. The data is sorted in descending order, so the states with the highest number of reported incidents are at the top. This data would be of interest to researchers as geographical/regional differences may correlate with increased crime frequency in some states when compared to others. Identifying such differences could help a policymaker determine a better process for dealing with crimes in certain regions.
 ```sql
 SELECT t.GEO_ID, g.GEO_NAME, g.LEVEL, t.VARIABLE_NAME, t.VALUE, t.DATE
 FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
@@ -113,7 +113,7 @@ ORDER BY t.VALUE DESC;
 # FBI US Crime Data Analytics Dashboard
 
 
-The timeseries table contains data from **1979 through the most recent available year**, covering all 50 US states plus DC and national totals, across 10 crime categories including violent crime, property crime, homicide, robbery, burglary, aggravated assault, larceny, motor vehicle theft, and two definitions of rape.
+The timeseries table contains data from **1979 through the most recent available year**, covering all 50 US states plus DC and national totals, across 10 crime categories including violent crime, property crime, homicide, robbery, burglary, etc.
 
 
 
@@ -123,20 +123,20 @@ The timeseries table contains data from **1979 through the most recent available
 
 [Insert screenshot of line chart here]
 
-The chart shows that property crime has consistently exceeded violent crime in raw incident counts throughout the entire period from 1979 to present. Both categories peaked in the early 1990s and declined significantly through the 2000s and 2010s, reflecting a well-documented national trend attributed to factors including changes in policing strategy, demographics, and economic conditions. The recent period shows some uptick in certain categories, which aligns with post-pandemic crime reporting patterns discussed in national policy research.
+The chart shows that property crime has consistently exceeded violent crime in raw incident counts throughout the entire period from 1979 to the present. Both categories peaked in the early 1990s and declined significantly through the 2000s and 2010s, **reflecting a well-documented national trend** attributed to factors including changes in policing strategy, demographics, and economic conditions. The recent period shows some uptick in certain categories, which aligns with post-pandemic crime reporting patterns discussed in national policy research.
 
 **Question 2:**
 
 [Insert screenshot of bar chart here]
 
-For most crime types, the highest raw incident counts are concentrated in the most populous states — California, Texas, Florida, and New York. This is expected given population size and does not necessarily indicate higher per-capita risk. However, the ranking shifts meaningfully depending on the crime type selected: for homicide, Southern states like Louisiana and Mississippi rank disproportionately high relative to their population, suggesting regional patterns worth further investigation. The year filter reveals that these rankings are relatively stable over time but do shift around major national events.
+For most crime types, the highest raw incident counts are concentrated in the most populous states (California, Texas, Florida, and New York). This is expected, given the population size, and does not necessarily indicate higher per-capita risk. However, **the ranking shifts meaningfully depending on the crime type selected**: for homicide, Southern states like Louisiana and Mississippi rank disproportionately high relative to their population, suggesting regional patterns worth further investigation. The year filter reveals that these rankings are relatively stable over time, but do shift around major national events.
 
 ## 6. Streamlit App
 
 [Insert screenshots of Streamlit app here]
 
-**Interactive Elements:** The app includes two interactive controls for Question 2 — a dropdown to select the crime type (all 8 available offense categories) and a dropdown to select the year (1979–2020). Together they allow the user to explore any combination of crime category and year, producing a new ranked bar chart on each selection.
+**Interactive Elements:** The app includes two interactive controls for Question 2: a dropdown to select the crime type (all 8 available offense categories) and a dropdown to select the year (1979–2020). Together, they allow the user to explore any combination of crime category and year, producing a new ranked bar chart on each selection.
 
-**Analytical Value:** These filters add genuine analytical value because the ranking of states changes substantially depending on which crime type and year is selected. A user can compare how the state distribution of homicides differs from motor vehicle theft, or track whether a particular state's relative ranking changed before and after a specific year. This kind of cross-dimensional exploration is not possible from a static chart.
+**Analytical Value:** These filters add genuine analytical value because the ranking of states changes substantially depending on which crime type and year is selected. A user can compare how the state distribution of homicides differs from that of motor vehicle theft, or track whether a particular state's relative ranking changed before and after a specific year. This kind of cross-dimensional exploration is not possible from a static chart.
 
 **AI Assistance:** Claude (Anthropic) was used to generate the initial Streamlit app code and SQL queries based on the dataset schema. The queries were verified to run correctly in Snowsight. The FIPS-to-state mapping dictionary and pivot logic were generated by Claude and accepted without modification. The written interpretations were drafted by Claude and reviewed by the team.
