@@ -8,152 +8,114 @@ Sp26_61608_Group 3
 4. Trey Hill [@treyhill277](https://github.com/treyhill277)
 5. Ciara Trinh [@cmt37912](https://github.com/cmt37912)
 6. Joshua Welch [@jew22145](https://github.com/jew22145)
-## Data Set Explanation 
-### `PUBLIC_DATA.FBI_CRIME_ATTRIBUTES`
-Estimated crime statistics for both state and national levels in the US from the FBI.
+## FBI Data Source Rationale
+For our project, we selected the FBI Crime dataset from Snowflake's publicly available data. This dataset allows us to query data that would be easy to graphically represent and make visually insightful, given that it contains consistent yearly counts across multiple crime categories and geographic levels. The topic of FBI crime statistics sparked our interest as it is something we are exposed to in day-to-day life making it both relevant and engaging to explore.
+## FBI Data Set 
+### PUBLIC_DATA.FBI_CRIME_ATTRIBUTES
+Snowflake description: Estimated crime statistics for both state and national levels in the US from the FBI. 
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_aggravated_assault` |
-| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, aggravated assault` |
-| `OFFENSE_CATEGORY` | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | `Aggravated Assault` |
-| `MEASURE` | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | `Incidents` |
-| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
-| `FREQUENCY` | VARCHAR | Frequency of aggregations. | `Annual` |
+| VARIABLE | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | annual_count_of_incidents_aggravated_assault |
+| VARIABLE_NAME | VARCHAR | Human-readable unique name for the variable. | Annual Count of Incidents, aggravated assault |
+| OFFENSE_CATEGORY | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | Aggravated Assault |
+| MEASURE | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | Incidents |
+| UNIT | VARCHAR | Unit of measurement for the reported value. | Count |
+| FREQUENCY | VARCHAR | Frequency of aggregations. | Annual |
 
 ---
 
-### `PUBLIC_DATA.FBI_CRIME_ATTRIBUTES_PIT`
-Tracks history of the `fbi_crime_attributes` table with start and end timestamps to indicate row validity periods.
+### PUBLIC_DATA.FBI_CRIME_ATTRIBUTES_PIT
+Snowflake description: Tracks history of the fbi_crime_attributes table with start and end timestamps to indicate row validity periods.
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_aggravated_assault` |
-| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, aggravated assault` |
-| `OFFENSE_CATEGORY` | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | `Aggravated Assault` |
-| `MEASURE` | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | `Incidents` |
-| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
-| `FREQUENCY` | VARCHAR | Frequency of aggregations. | `Annual` |
-| `_EFFECTIVE_START_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | `2024-09-24 12:33:41.372000-04:00` |
-| `_EFFECTIVE_END_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | `N/A` |
+| VARIABLE | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | annual_count_of_incidents_aggravated_assault |
+| VARIABLE_NAME | VARCHAR | Human-readable unique name for the variable. | Annual Count of Incidents, aggravated assault |
+| OFFENSE_CATEGORY | VARCHAR | Category of the offense, as defined by the Federal Bureau of Investigation (FBI). | Aggravated Assault |
+| MEASURE | VARCHAR | Quantifiable attribute or subject; description of what is being recorded. | Incidents |
+| UNIT | VARCHAR | Unit of measurement for the reported value. | Count |
+| FREQUENCY | VARCHAR | Frequency of aggregations. | Annual |
+| _EFFECTIVE_START_TIMESTAMP | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | 2024-09-24 12:33:41.372000-04:00 |
+| _EFFECTIVE_END_TIMESTAMP | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | N/A |
 
 ---
 
-### `PUBLIC_DATA.FBI_CRIME_TIMESERIES`
-Estimated crime statistics for both state and national levels in the US from the FBI.
+### PUBLIC_DATA.FBI_CRIME_TIMESERIES
+Snowflake description: Estimated crime statistics for both state and national levels in the US from the FBI.
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `GEO_ID` | VARCHAR | A unique identifier for a place. Joinable to other geography tables including `GEOGRAPHY_INDEX`, `GEOGRAPHY_RELATIONSHIPS`, and `GEOGRAPHY_CHARACTERISTICS`. | `country/USA` |
-| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_violent_crime` |
-| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, violent crime` |
-| `DATE` | DATE | Date associated with the value. | `1979-12-31` |
-| `VALUE` | NUMBER | Value reported for the variable. | `1208030` |
-| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
+| GEO_ID | VARCHAR | A unique identifier for a place. Joinable to other geography tables including GEOGRAPHY_INDEX, GEOGRAPHY_RELATIONSHIPS, and GEOGRAPHY_CHARACTERISTICS. | country/USA |
+| VARIABLE | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | annual_count_of_incidents_violent_crime |
+| VARIABLE_NAME | VARCHAR | Human-readable unique name for the variable. | Annual Count of Incidents, violent crime |
+| DATE | DATE | Date associated with the value. | 1979-12-31 |
+| VALUE | NUMBER | Value reported for the variable. | 1208030 |
+| UNIT | VARCHAR | Unit of measurement for the reported value. | Count |
 
 ---
 
-### `PUBLIC_DATA.FBI_CRIME_TIMESERIES_PIT`
-Tracks history of the `fbi_crime_timeseries` table with start and end timestamps to indicate row validity periods.
+### PUBLIC_DATA.FBI_CRIME_TIMESERIES_PIT
+Snowflake description: Tracks history of the fbi_crime_timeseries table with start and end timestamps to indicate row validity periods.
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `GEO_ID` | VARCHAR | A unique identifier for a place. Joinable to other geography tables including `GEOGRAPHY_INDEX`, `GEOGRAPHY_RELATIONSHIPS`, and `GEOGRAPHY_CHARACTERISTICS`. | `country/USA` |
-| `VARIABLE` | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | `annual_count_of_incidents_violent_crime` |
-| `VARIABLE_NAME` | VARCHAR | Human-readable unique name for the variable. | `Annual Count of Incidents, violent crime` |
-| `DATE` | DATE | Date associated with the value. | `1979-12-31` |
-| `VALUE` | NUMBER | Value reported for the variable. | `1208030` |
-| `UNIT` | VARCHAR | Unit of measurement for the reported value. | `Count` |
-| `_EFFECTIVE_START_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | `2024-05-21 23:04:34.367000-04:00` |
-| `_EFFECTIVE_END_TIMESTAMP` | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | `2024-09-24 15:37:27.010000-04:00` |
-### `PUBLIC_DATA.GEOGRAPHY_INDEX`
-Snowflake Public Data unified geographic entity index, joinable to all tables, providing unique geographic identifiers with associated names, levels, and ISO codes for various US geographies.
+| GEO_ID` | VARCHAR | A unique identifier for a place. Joinable to other geography tables including GEOGRAPHY_INDEX, GEOGRAPHY_RELATIONSHIPS, and GEOGRAPHY_CHARACTERISTICS. | country/USA |
+| VARIABLE | VARCHAR | Unique identifier for a variable, joinable to the timeseries table. | annual_count_of_incidents_violent_crime |
+| VARIABLE_NAME | VARCHAR | Human-readable unique name for the variable. | Annual Count of Incidents, violent crime |
+| DATE | DATE | Date associated with the value. | 1979-12-31 |
+| VALUE | NUMBER | Value reported for the variable. | 1208030 |
+| UNIT | VARCHAR | Unit of measurement for the reported value. | Count |
+| _EFFECTIVE_START_TIMESTAMP | TIMESTAMP_TZ | Date and time (in ET) from which a row is valid. | 2024-05-21 23:04:34.367000-04:00 |
+| _EFFECTIVE_END_TIMESTAMP | TIMESTAMP_TZ | Date and time (in ET) until which a row is valid. | 2024-09-24 15:37:27.010000-04:00 |
+
+---
+
+### PUBLIC_DATA.GEOGRAPHY_INDEX
+Snowflake description: Snowflake Public Data unified geographic entity index, joinable to all tables, providing unique geographic identifiers with associated names, levels, and ISO codes for various US geographies.
+- This table from the Geography data set was added in order to connect Geo IDs with state names.
 
 | Column | Type | Description | Example |
 |--------|------|-------------|---------|
-| `GEO_ID` | VARCHAR | A unique identifier for a place (a nation, state, zip-code, etc.) | `VIR/St.Croix` |
-| `GEO_NAME` | VARCHAR | Full name of the place. | `St.Croix` |
-| `LEVEL` | VARCHAR | Geographic level or hierarchy (e.g., Country, State, County, City, Continent, CountrySubRegion, etc.) | `County` |
-| `ISO_NAME` | VARCHAR | Country name from International Organization for Standardization. | `Aruba` |
-| `ISO_ALPHA2` | VARCHAR | 2 letter country code from International Organization for Standardization. | `QC` |
-| `ISO_ALPHA3` | VARCHAR | 3 letter country code from International Organization for Standardization. | `BHS` |
-| `ISO_NUMERIC_CODE` | VARCHAR | Numeric code from International Organization for Standardization. | `533` |
-| `ISO_3166_2_CODE` | VARCHAR | Full ISO-3166 code. | `ISO 3166-2:BS` |
+| GEO_ID | VARCHAR | A unique identifier for a place (a nation, state, zip-code, etc.) | VIR/St.Croix |
+| GEO_NAME | VARCHAR | Full name of the place. | St.Croix` |
+| LEVEL | VARCHAR | Geographic level or hierarchy (e.g., Country, State, County, City, Continent, CountrySubRegion, etc.) | County |
+| ISO_NAME | VARCHAR | Country name from International Organization for Standardization. | Aruba |
+| ISO_ALPHA2 | VARCHAR | 2 letter country code from International Organization for Standardization. | QC |
+| ISO_ALPHA3 | VARCHAR | 3 letter country code from International Organization for Standardization. | BHS |
+| ISO_NUMERIC_CODE | VARCHAR | Numeric code from International Organization for Standardization. | 533 |
+| ISO_3166_2_CODE | VARCHAR | Full ISO-3166 code. | ISO 3166-2:BS |
 
 ## Questions
 **Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
+- The goal of this question is to determine whether violent crime and property crime in the United States have been going up, going down, or staying the same over the years. It pulls data from two different tables, one containing the actual yearly crime counts and another containing location names, joining them together by a shared location code. The results are then filtered by national-level data and is limited to the two crime categories in question. Sorting by date ascending makes it easy to spot trends over time. This data is important to have as researchers may be interested in what caused a spike or drop in the different types of crimes. For example, major societal events like the COVID-19 pandemic could be potential factors worth investigating. 
+```sql
+SELECT t.DATE, t.VARIABLE_NAME, t.VALUE, g.GEO_NAME, g.LEVEL,
+FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
+JOIN SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.GEOGRAPHY_INDEX g ON t.GEO_ID = g.GEO_ID
+WHERE t.GEO_ID = 'country/USA' AND t.VARIABLE_NAME IN ('Annual Count of Incidents, violent crime','Annual Count of Incidents, property crime')
+ORDER BY t.DATE ASC;
+```
 
 **Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
+- This query identifies which states report the highest crime incidents for various crime types in a specific year. It pulls crime counts and location names from two joined tables and filters to state-level data by using the PUBLIC_DATA.GEOGRAPHY_INDEX to match state location codes to state names. The query is sorted in descending order so the highest reporting states are at the top. This data would be of interest to researchers as geographical regional differences may lead to increased crimes in some states as compared to others. Identifying these differences could help policymakers determine a better process to dealing with crimes in these regions.
+```sql
+SELECT t.GEO_ID, g.GEO_NAME, g.LEVEL, t.VARIABLE_NAME, t.VALUE, t.DATE
+FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
+JOIN SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.GEOGRAPHY_INDEX g ON t.GEO_ID = g.GEO_ID
+WHERE t.GEO_ID LIKE 'geoId/%' AND t.GEO_ID != 'country/USA' AND YEAR(t.DATE) = 2020
+  AND t.VARIABLE_NAME IN ('Annual Count of Incidents, violent crime','Annual Count of Incidents, property crime','Annual Count of Incidents, homicide','Annual Count of Incidents, robbery','Annual Count of Incidents, burglary','Annual Count of Incidents, motor vehicle theft','Annual Count of Incidents, aggravated assault','Annual Count of Incidents, larceny')
+ORDER BY t.VALUE DESC;
+```
 ## Snowsight Dashboard
 ## Streamlit 
 
 # FBI US Crime Data Analytics Dashboard
-## 2. Dataset Description
-**Provider:** Snowflake Public Data (Cybersyn)  
-**Marketplace Listing:** Snowflake Public Data Free  
-**Database:** `SNOWFLAKE_PUBLIC_DATA_FREE`  
-**Schema:** `PUBLIC_DATA_FREE`  
 
-| Table | Type | Description |
-|---|---|---|
-| `FBI_CRIME_TIMESERIES` | View | Annual crime incident counts by geography and crime type |
-| `FBI_CRIME_ATTRIBUTES` | View | Metadata describing each crime variable |
-| `FBI_CRIME_ATTRIBUTES_PIT` | View | Point-in-time history of attributes |
-| `FBI_CRIME_TIMESERIES_PIT` | View | Point-in-time history of timeseries values |
-
-**Key columns in `FBI_CRIME_TIMESERIES`:**
-- `GEO_ID` (VARCHAR) — geography identifier (e.g. `country/USA`, `geoId/13` for Georgia)
-- `VARIABLE` (VARCHAR) — unique variable identifier
-- `VARIABLE_NAME` (VARCHAR) — human-readable crime type (e.g. `Annual Count of Incidents, violent crime`)
-- `DATE` (DATE) — year-end date for the annual observation
-- `VALUE` (NUMBER) — incident count
-- `UNIT` (VARCHAR) — unit of measurement (Count)
-
-**Key columns in `FBI_CRIME_ATTRIBUTES`:**
-- `VARIABLE` (VARCHAR) — joinable to timeseries
-- `VARIABLE_NAME` (VARCHAR) — human-readable name
-- `OFFENSE_CATEGORY` (VARCHAR) — FBI crime category
-- `MEASURE` (VARCHAR) — what is being measured
-- `FREQUENCY` (VARCHAR) — reporting frequency (Annual)
 
 The timeseries table contains data from **1979 through the most recent available year**, covering all 50 US states plus DC and national totals, across 10 crime categories including violent crime, property crime, homicide, robbery, burglary, aggravated assault, larceny, motor vehicle theft, and two definitions of rape.
 
-## 3. Questions and Justification
 
-**Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
-
-This question is analytically meaningful because it requires filtering to the national geography, selecting two specific crime variables, and examining change across four decades. It is socially significant because long-term crime trends inform policy debates around policing, incarceration, and public safety investment. Columns used: `GEO_ID`, `VARIABLE_NAME`, `DATE`, `VALUE`.
-
-**Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
-
-This question requires filtering by year and crime type, grouping by state geography, and ranking results — it cannot be answered by a single lookup. It is operationally meaningful because it reveals where law enforcement burden is most concentrated and how that shifts across crime categories and years. Columns used: `GEO_ID`, `VARIABLE_NAME`, `DATE`, `VALUE`.
-
-## 4. Data Manipulations
-
-**Question 1:**
-```sql
-SELECT DATE, VARIABLE_NAME, VALUE
-FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES
-WHERE GEO_ID = 'country/USA'
-  AND VARIABLE_NAME IN (
-      'Annual Count of Incidents, violent crime',
-      'Annual Count of Incidents, property crime'
-  )
-ORDER BY DATE ASC;
-```
-Filters to national-level data only, selects the two broadest crime categories, and orders chronologically for time series plotting. No joins are required because `VARIABLE_NAME` is denormalized into the timeseries table.
-
-**Question 2:**
-```sql
-SELECT t.GEO_ID, t.VARIABLE_NAME, t.VALUE
-FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
-WHERE t.GEO_ID LIKE 'geoId/%'
-  AND YEAR(t.DATE) = [selected year]
-  AND t.VARIABLE_NAME = '[selected crime type]'
-ORDER BY t.VALUE DESC
-LIMIT 15;
-```
-Filters to state-level geographies using the `geoId/` prefix pattern, applies a year filter using `YEAR()`, and limits to the top 15 states by incident count. The FIPS-to-state-name mapping is applied in Python after retrieval.
 
 ## 5. Analysis and Results
 
