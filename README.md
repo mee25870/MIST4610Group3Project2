@@ -134,7 +134,9 @@ For most crime types, the highest raw incident counts are concentrated in the mo
 ## 6. Streamlit App
 
 <img width="1016" height="687" alt="Screenshot 2026-04-27 at 2 28 31 PM" src="https://github.com/user-attachments/assets/a821bb9c-46f7-4ac2-b974-d845da2ab18a" />
+
 <img width="928" height="587" alt="Screenshot 2026-04-27 at 2 30 14 PM" src="https://github.com/user-attachments/assets/c138426b-9e04-45fb-afab-e45a92b139be" />
+
 <img width="910" height="585" alt="Screenshot 2026-04-27 at 2 30 29 PM" src="https://github.com/user-attachments/assets/ba1dcece-ef32-4b65-a397-016ec553ae10" />
 
 **Interactive Elements:** The app includes two interactive controls for Question 2: a dropdown to select the crime type (all 8 available offense categories) and a dropdown to select the year (1979–2020). Together, they allow the user to explore any combination of crime category and year, producing a new ranked bar chart on each selection.
