@@ -10,7 +10,7 @@ Sp26_61608_Group 3
 6. Joshua Welch [@jew22145](https://github.com/jew22145)
 ## FBI Data Source Rationale
 For our project, we selected the FBI Crime dataset from Snowflake's publicly available data. This dataset allows us to query data that would be easy to graphically represent and make visually insightful, given that it contains consistent yearly counts across multiple crime categories and geographic levels. The topic of FBI crime statistics sparked our interest as it is something we are exposed to in day-to-day life making it both relevant and engaging to explore.
-## FBI Data Set 
+## FBI Dataset 
 ### PUBLIC_DATA.FBI_CRIME_ATTRIBUTES
 Snowflake description: Estimated crime statistics for both state and national levels in the US from the FBI. 
 
