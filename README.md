@@ -121,13 +121,13 @@ The timeseries table contains data from **1979 through the most recent available
 
 **Question 1:**
 
-[Insert screenshot of line chart here]
+<img width="946" height="419" alt="Screenshot 2026-04-27 at 2 20 55 PM" src="https://github.com/user-attachments/assets/c0c6673c-9185-4426-a83c-86068d19957c" />
 
 The chart shows that property crime has consistently exceeded violent crime in raw incident counts throughout the entire period from 1979 to the present. Both categories peaked in the early 1990s and declined significantly through the 2000s and 2010s, **reflecting a well-documented national trend** attributed to factors including changes in policing strategy, demographics, and economic conditions. The recent period shows some uptick in certain categories, which aligns with post-pandemic crime reporting patterns discussed in national policy research.
 
 **Question 2:**
 
-[Insert screenshot of bar chart here]
+<img width="900" height="581" alt="Screenshot 2026-04-27 at 2 24 53 PM" src="https://github.com/user-attachments/assets/916d0f45-2c42-41b1-b1cd-3dba2f04260c" />
 
 For most crime types, the highest raw incident counts are concentrated in the most populous states (California, Texas, Florida, and New York). This is expected, given the population size, and does not necessarily indicate higher per-capita risk. However, **the ranking shifts meaningfully depending on the crime type selected**: for homicide, Southern states like Louisiana and Mississippi rank disproportionately high relative to their population, suggesting regional patterns worth further investigation. The year filter reveals that these rankings are relatively stable over time, but do shift around major national events.
 
