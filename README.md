@@ -116,7 +116,7 @@ The timeseries table contains data from **1979 through the most recent available
 
 
 
-## 5. Analysis and Results
+## Analysis and Results
 
 **Question 1:**
 
@@ -130,7 +130,7 @@ The chart shows that property crime has consistently exceeded violent crime in r
 
 For most crime types, the highest raw incident counts are concentrated in the most populous states (California, Texas, Florida, and New York). This is expected, given the population size, and does not necessarily indicate higher per-capita risk. However, **the ranking shifts meaningfully depending on the crime type selected**: for homicide, Southern states like Louisiana and Mississippi rank disproportionately high relative to their population, suggesting regional patterns worth further investigation. The year filter reveals that these rankings are relatively stable over time, but do shift around major national events.
 
-## 6. Streamlit App
+## Streamlit App
 
 <img width="1016" height="687" alt="Screenshot 2026-04-27 at 2 28 31 PM" src="https://github.com/user-attachments/assets/a821bb9c-46f7-4ac2-b974-d845da2ab18a" />
 
