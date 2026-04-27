@@ -107,8 +107,7 @@ WHERE t.GEO_ID LIKE 'geoId/%' AND t.GEO_ID != 'country/USA' AND YEAR(t.DATE) = 2
   AND t.VARIABLE_NAME IN ('Annual Count of Incidents, violent crime','Annual Count of Incidents, property crime','Annual Count of Incidents, homicide','Annual Count of Incidents, robbery','Annual Count of Incidents, burglary','Annual Count of Incidents, motor vehicle theft','Annual Count of Incidents, aggravated assault','Annual Count of Incidents, larceny')
 ORDER BY t.VALUE DESC;
 ```
-## Snowsight Dashboard
-## Streamlit 
+
 
 # FBI US Crime Data Analytics Dashboard
 
