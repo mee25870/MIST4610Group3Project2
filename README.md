@@ -105,7 +105,7 @@ ORDER BY t.DATE ASC;
 ```
 
 **Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
-- This query pulls crime counts and location names from two joined tables and filters to state-level data (using the PUBLIC_DATA.GEOGRAPHY_INDEX) to match state location codes to state names. The data is sorted in descending order, so the states with the highest number of reported incidents are at the top.
+- This query pulls crime counts and location names from two joined tables and filters to state-level data (using the PUBLIC_DATA.GEOGRAPHY_INDEX) to match state location codes to state names.  It filters to state-level U.S. geographies (excluding the national USA aggregate) and pulls eight specific crime categories. The data is sorted in descending order, so the states with the highest number of reported incidents are at the top.
 ```sql
 SELECT t.GEO_ID, g.GEO_NAME, g.LEVEL, t.VARIABLE_NAME, t.VALUE, t.DATE
 FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
