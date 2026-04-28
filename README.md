@@ -88,7 +88,14 @@ Snowflake description: Snowflake Public Data unified geographic entity index, jo
 
 ## Questions
 **Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
-- The goal of this question is to determine whether the frequency of violent crime and property crime in the United States has trended upward, downward, or stayed the same over the years. It pulls data from two different tables: one containing the actual yearly crime counts and another containing location names, joining them together by a shared location code. The results are then filtered by national-level data and are limited to the two crime categories in question. Sorting by date ascending makes it easy to spot trends over time. Questions like these are important to ask as the data can show us significant patterns that researchers may be interested in investigating further, such as what caused a spike or drop in a specific type of crime. Something like a major societal event (like the COVID-19 pandemic, for example) could be a potential factor or reason for seeing significant changes in crime data, and that is why we must investigate. 
+- The goal of this question is to determine whether the frequency of violent crime and property crime in the United States has trended upward, downward, or stayed the same over the years. Questions like these are important to ask as the data can show us significant patterns that researchers may be interested in investigating further, such as what caused a spike or drop in a specific type of crime. Something like a major societal event (like the COVID-19 pandemic, for example) could be a potential factor or reason for seeing significant changes in crime data, and that is why we must investigate. 
+
+**Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
+- This query identifies which states report the highest crime incidents for various crime types in a specific year. This data would be of interest to researchers as geographical/regional differences may correlate with increased crime frequency in some states when compared to others. Identifying such differences could help a policymaker determine a better process for dealing with crimes in certain regions.
+
+## Data Manipulations
+**Question 1: How have national violent crime and property crime incident counts trended over time in the United States?**
+- This query pulls data from two different tables: one containing the actual yearly crime counts and another containing location names, joining them together by a shared location code. The results are then filtered by national-level data and are limited to the two crime categories in question. Sorting by date ascending makes it easy to spot trends over time.  
 ```sql
 SELECT t.DATE, t.VARIABLE_NAME, t.VALUE, g.GEO_NAME, g.LEVEL,
 FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
@@ -98,7 +105,7 @@ ORDER BY t.DATE ASC;
 ```
 
 **Question 2: Which states report the highest number of incidents for a given crime type in a given year?**
-- This query identifies which states report the highest crime incidents for various crime types in a specific year. It pulls crime counts and location names from two joined tables and filters to state-level data (using the PUBLIC_DATA.GEOGRAPHY_INDEX) to match state location codes to state names. The data is sorted in descending order, so the states with the highest number of reported incidents are at the top. This data would be of interest to researchers as geographical/regional differences may correlate with increased crime frequency in some states when compared to others. Identifying such differences could help a policymaker determine a better process for dealing with crimes in certain regions.
+- This query pulls crime counts and location names from two joined tables and filters to state-level data (using the PUBLIC_DATA.GEOGRAPHY_INDEX) to match state location codes to state names. The data is sorted in descending order, so the states with the highest number of reported incidents are at the top.
 ```sql
 SELECT t.GEO_ID, g.GEO_NAME, g.LEVEL, t.VARIABLE_NAME, t.VALUE, t.DATE
 FROM SNOWFLAKE_PUBLIC_DATA_FREE.PUBLIC_DATA_FREE.FBI_CRIME_TIMESERIES t
@@ -107,7 +114,6 @@ WHERE t.GEO_ID LIKE 'geoId/%' AND t.GEO_ID != 'country/USA' AND YEAR(t.DATE) = 2
   AND t.VARIABLE_NAME IN ('Annual Count of Incidents, violent crime','Annual Count of Incidents, property crime','Annual Count of Incidents, homicide','Annual Count of Incidents, robbery','Annual Count of Incidents, burglary','Annual Count of Incidents, motor vehicle theft','Annual Count of Incidents, aggravated assault','Annual Count of Incidents, larceny')
 ORDER BY t.VALUE DESC;
 ```
-
 
 # FBI US Crime Data Analytics Dashboard
 
