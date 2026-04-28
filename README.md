@@ -124,7 +124,7 @@ The timeseries table contains data from 1979 through the most recent available y
 
 <img width="1101" height="542" alt="Screenshot 2026-04-27 at 3 04 38 PM" src="https://github.com/user-attachments/assets/cffabea0-8f55-4bcc-9303-b0d672bac530" />
 
-**Chart #2:** This chart shows the frequency of an aggregate of multiple types of incidents (Y-axis), separated by the state in which the crime took place (X-axis). In this case, the chart is able to be manipulated for different purposes (to view different crimes) by changing the Y-axis variable to only certain preferred types of crime (property crime, homicide, etc.) and then individually viewing the crime frequencies of those categories within the different states. The highest results in a chart like this tend to favor states like California, as shown, due to their large population.
+**Chart #2:** This chart shows the frequency of an aggregate of multiple types of incidents (Y-axis), separated by the state in which the crime took place (X-axis). In this case, the chart is able to be manipulated for different purposes (to view different crimes) by changing the Y-axis variable to only certain preferred types of crime (property crime, homicide, etc.) and then individually viewing the crime frequencies of those categories within the different states (Results can even be filtered further by only including incident counts within a specific year to give us even more details and free will over the data). The highest results in a chart like this tend to favor states like California, as shown, due to their larger populations.
 
 
 ## Analysis and Results
